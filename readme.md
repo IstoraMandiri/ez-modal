@@ -6,11 +6,13 @@
 $ meteor add hitchcott:ez-modal
 ```
 
-This package adds an `EZModal` method to the client. When called, it appends a bootstrap 3 modal to the client with various options.
+This package adds an `EZModal` helper to the client. When called, it spawns a Bootstrap 3 modal within the DOM, and comes with a number of customisations.
 
-It uses `Blaze.renderWithData` to provide a clean reactive appendature to the DOM, and it removes itself when the modal is closed.
+It uses `Blaze.renderWithData` to provide a clean reactive appendature to the DOM, and it removes itself from the DOM when the modal is closed.
 
 It supports dynanmic templates for header, body and footer.
+
+Please ensure you have Bootstrap 3 (and it's javascript) enabled within your project. Built and tested with  [mizzao:bootstrap-3](https://github.com/mizzao/meteor-bootstrap-3).
 
 ## Examples
 
