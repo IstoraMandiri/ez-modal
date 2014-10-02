@@ -1,0 +1,51 @@
+<template name="EZModal">
+  <div class="ez-modal modal {{#if fade}}fade{{/if}} {{classes}}">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        {{#if headerTemplate}}
+          <div class="modal-header">
+            {{> headerTemplate}}
+          </div>
+        {{else}}
+          {{#if title}}
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">
+                <span aria-hidden="true">&times;</span>
+                <span class="sr-only">Close</span>
+              </button>
+              <h4 class="modal-title">{{title}}</h4>
+            </div>
+          {{/if}}
+        {{/if}}
+
+        {{#if bodyTemplate}}
+          <div class="modal-body">
+            {{> UI.dynamic template=bodyTemplate data=dataContext}}
+          </div>
+        {{else}}
+          {{#if body}}
+            <div class="modal-body">
+              <p>{{body}}</p>
+            </div>
+          {{/if}}
+        {{/if}}
+
+        <div class="modal-footer">
+          {{#if footerTemplate}}
+            {{> UI.dynamic template=footerTemplate data=dataContext}}
+          {{else}}
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              {{#if button}}
+                {{button}}
+              {{else}}
+                OK
+              {{/if}}
+            </button>
+          {{/if}}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</template>
