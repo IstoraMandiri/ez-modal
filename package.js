@@ -1,6 +1,6 @@
 Package.describe({
   summary: "Easy Bootstrap 3 Modals",
-  version: "0.0.2",
+  version: "0.0.3",
   name: 'hitchcott:ez-modal',
   git: "https://github.com/hitchcott/ez-modal"
 });

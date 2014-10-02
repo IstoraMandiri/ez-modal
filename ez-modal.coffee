@@ -2,7 +2,7 @@ EZModal = (options, callback) ->
 
   # turn string to body text
   optionType = typeof options
-  if optionType.indexOf(['number', 'string']) > -1
+  if ['number', 'string'].indexOf(optionType) > -1
     options = {body: options}
 
   bootstrapOptions =
