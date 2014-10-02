@@ -5,7 +5,7 @@
 
         {{#if headerTemplate}}
           <div class="modal-header">
-            {{> headerTemplate}}
+            {{> UI.dynamic template=headerTempalte data=dataContext}}
           </div>
         {{else}}
           {{#if title}}
