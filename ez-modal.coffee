@@ -13,7 +13,7 @@ EZModal = (options, callback) ->
   templateOptions =
     classes: options.classes
     fade: options.fade?= true
-    dataContext: options.dataContext
+    dataContext: options.dataContext?= {}
     title: options.title
     body: options.body
     button: options.button
@@ -25,6 +25,8 @@ EZModal = (options, callback) ->
   instance = Blaze.renderWithData Template.EZModal, templateOptions, document.body
 
   modal = $(instance.firstNode()).modal bootstrapOptions
+
+  templateOptions.dataContext.EZModal = modal
 
   # clean up after remove
   modal.on 'hidden.bs.modal', (e) ->

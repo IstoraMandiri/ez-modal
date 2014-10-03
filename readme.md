@@ -36,6 +36,16 @@ EZModal
   bodyTemplate: 'myBodyTemplate'
   footerTemplate: 'myFooterTemplate'
 
+# the 'EZModal' jquery refernce is automatially added, which allows you to hook into modal events from the child templates, eg:
+Template.myFooterTemplate.events
+  'click .submit' : ->
+    # @EZModal part of 'this' scope
+    @EZModal.modal('hide').on 'hidden.bs.modal', ->
+      # New EZ Modal spawn after old one is hidden
+      EZModal
+        'title' : "Thank You"
+
+
 # Pass a second parameter for callback on close
 EZModal 'Thank you', -> console.log 'modal closed'
 
