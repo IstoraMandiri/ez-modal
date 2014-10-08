@@ -11,16 +11,21 @@ EZModal = (options, callback) ->
     backdrop: options.backdrop
 
   templateOptions =
+    # styling
     classes: options.classes
     fade: options.fade?= true
-    dataContext: options.dataContext?= {}
+    # simple content
     title: options.title
     body: options.body
-    button: options.button
+    # templates
+    dataContext: options.dataContext?= {}
     headerTemplate: options.headerTemplate
     bodyTemplate: options.bodyTemplate
     footerTemplate: options.footerTemplate
-    # TODO Add button generation
+    # buttons
+    buttons: options.leftButtons || options.rightButtons
+    leftButtons: options.leftButtons
+    rightButtons: options.rightButtons
 
   instance = Blaze.renderWithData Template.EZModal, templateOptions, document.body
 
@@ -35,3 +40,10 @@ EZModal = (options, callback) ->
 
   # return the modal object itself
   return modal
+
+Template.EZModal.events
+  'click .ez-modal-button' : (e,tmpl) ->
+    if @fn
+      do @fn.bind tmpl.data.dataContext, e, tmpl
+    else
+      tmpl.data.dataContext.EZModal.modal('hide')
