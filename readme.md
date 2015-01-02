@@ -97,6 +97,7 @@ EZModal
     body: String # text to appear in the modal body (if template undefined)
     bodyHtml: String # html to appear in the modal body (if template undefined)
     dataContext: Object # data to pass to templates & helpers
+    template: String # template for whole modal; if defined, overrides below
     headerTemplate: String # template key for header area
     bodyTemplate: String # template key for body area
     footerTemplate: String # template key for footer area

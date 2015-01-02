@@ -2,64 +2,68 @@
   <div class="ez-modal modal {{#if fade}}fade{{/if}} {{classes}}">
     <div class="modal-dialog">
       <div class="modal-content">
-
-        {{#if headerTemplate}}
-          <div class="modal-header">
-            {{> UI.dynamic template=headerTempalte data=dataContext}}
-          </div>
+        {{#if template}}
+          {{> UI.dynamic template=template data=dataContext}}
         {{else}}
-          {{#if title}}
+
+          {{#if headerTemplate}}
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">
-                <span aria-hidden="true">&times;</span>
-                <span class="sr-only">Close</span>
-              </button>
-              <h4 class="modal-title">{{title}}</h4>
-            </div>
-          {{/if}}
-        {{/if}}
-
-        {{#if bodyTemplate}}
-          <div class="modal-body modal-body-template">
-            {{> UI.dynamic template=bodyTemplate data=dataContext}}
-          </div>
-        {{else}}
-          {{#if body}}
-            <div class="modal-body">
-              <p>{{body}}</p>
+              {{> UI.dynamic template=headerTempalte data=dataContext}}
             </div>
           {{else}}
-            {{#if bodyHtml}}
-              <div class="modal-body modal-body-html">{{{bodyHtml}}}</div>
+            {{#if title}}
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                  <span aria-hidden="true">&times;</span>
+                  <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title">{{title}}</h4>
+              </div>
             {{/if}}
           {{/if}}
-        {{/if}}
 
-        <div class="modal-footer">
-          {{#if footerTemplate}}
-            {{> UI.dynamic template=footerTemplate data=dataContext}}
+          {{#if bodyTemplate}}
+            <div class="modal-body modal-body-template">
+              {{> UI.dynamic template=bodyTemplate data=dataContext}}
+            </div>
           {{else}}
-            {{#if buttons}}
-              {{#if leftButtons}}
-                <div class="pull-left">
-                  {{#each leftButtons}}
-                    <div class="ez-modal-button btn btn-{{#if color}}{{color}}{{else}}default{{/if}}">{{{html}}}</div>
-                  {{/each}}
-                </div>
-              {{/if}}
-              {{#if rightButtons}}
-                <div class="pull-right">
-                  {{#each rightButtons}}
-                    <div class="ez-modal-button btn btn-{{#if color}}{{color}}{{else}}default{{/if}}">{{{html}}}</div>
-                  {{/each}}
-                </div>
-              {{/if}}
+            {{#if body}}
+              <div class="modal-body">
+                <p>{{body}}</p>
+              </div>
             {{else}}
-              <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+              {{#if bodyHtml}}
+                <div class="modal-body modal-body-html">{{{bodyHtml}}}</div>
+              {{/if}}
             {{/if}}
           {{/if}}
-        </div>
 
+          <div class="modal-footer">
+            {{#if footerTemplate}}
+              {{> UI.dynamic template=footerTemplate data=dataContext}}
+            {{else}}
+              {{#if buttons}}
+                {{#if leftButtons}}
+                  <div class="pull-left">
+                    {{#each leftButtons}}
+                      <div class="ez-modal-button btn btn-{{#if color}}{{color}}{{else}}default{{/if}}">{{{html}}}</div>
+                    {{/each}}
+                  </div>
+                {{/if}}
+                {{#if rightButtons}}
+                  <div class="pull-right">
+                    {{#each rightButtons}}
+                      <div class="ez-modal-button btn btn-{{#if color}}{{color}}{{else}}default{{/if}}">{{{html}}}</div>
+                    {{/each}}
+                  </div>
+                {{/if}}
+              {{else}}
+                <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+              {{/if}}
+            {{/if}}
+          </div>
+
+        {{/if}}
       </div>
     </div>
   </div>
