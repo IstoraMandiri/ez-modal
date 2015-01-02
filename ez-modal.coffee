@@ -17,6 +17,7 @@ EZModal = (options, callback) ->
     # simple content
     title: options.title
     body: options.body
+    bodyHtml: options.bodyHtml
     # templates
     dataContext: options.dataContext?= {}
     headerTemplate: options.headerTemplate

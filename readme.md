@@ -95,6 +95,7 @@ EZModal
     classes: String # classes added to modal div
     title: String # text to appear in the modal head (if template undefined)
     body: String # text to appear in the modal body (if template undefined)
+    bodyHtml: String # html to appear in the modal body (if template undefined)
     dataContext: Object # data to pass to templates & helpers
     headerTemplate: String # template key for header area
     bodyTemplate: String # template key for body area

@@ -20,7 +20,7 @@
         {{/if}}
 
         {{#if bodyTemplate}}
-          <div class="modal-body">
+          <div class="modal-body modal-body-template">
             {{> UI.dynamic template=bodyTemplate data=dataContext}}
           </div>
         {{else}}
@@ -28,6 +28,10 @@
             <div class="modal-body">
               <p>{{body}}</p>
             </div>
+          {{else}}
+            {{#if bodyHtml}}
+              <div class="modal-body modal-body-html">{{{bodyHtml}}}</div>
+            {{/if}}
           {{/if}}
         {{/if}}
 
