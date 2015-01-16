@@ -15,6 +15,10 @@ It supports dynanmic templates for header, body and footer.
 Please ensure you have Bootstrap 3 (and it's javascript) enabled within your project. Built and tested with  [mizzao:bootstrap-3](https://github.com/mizzao/meteor-bootstrap-3).
 
 ## Examples
+
+Check out http://ez-modal.meteor.com/ for some interactive examples.
+
+
 ### Simple Usage
 ```coffeescript
 EZModal 'Hello World'
