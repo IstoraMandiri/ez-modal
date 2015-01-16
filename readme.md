@@ -87,26 +87,41 @@ $myModal.modal('show')
 ## API
 
 ```coffeescript
-EZModal 
-    show: true # show modal on init
-    keyboard: false # allow keyboard (esc) to hide
-    backdrop: true # show dark backdrop overlay
-    fade: true # fade in/out animation
+EZModal
+
+    # styling
     classes: String # classes added to modal div
+    size: null # use `sm` or `lg` for larger or smaller width
+    fade: true # fade in/out animation
+    backdrop: true # show dark backdrop overlay
+
+    # simple content
     title: String # text to appear in the modal head (if template undefined)
     body: String # text to appear in the modal body (if template undefined)
     bodyHtml: String # html to appear in the modal body (if template undefined)
+
+    # templates
     dataContext: Object # data to pass to templates & helpers
-    template: String # template for whole modal; if defined, overrides below
+    template: String # template key for whole modal; if defined, overrides below
     headerTemplate: String # template key for header area
     bodyTemplate: String # template key for body area
     footerTemplate: String # template key for footer area
-    leftButtons: [ # generate buttons in footer area (float left)
+    hideFooter: false # footer visibility
+
+    # generate buttons in footer area
+    # float left
+    leftButtons: [ as below ]
+    # float right
+    rightButtons: [
         html: String # button text 
         color: String # button class eg. primary / danger
-        fn: Function # click event
+        fn: Function # click event handler
     ]
-    rightButtons: [] # generate buttons in footer area (float right)
+
+    # misc
+    show: true # show modal on init
+    keyboard: false # allow keyboard (esc) to hide
+
  , ->
    # callback on modal close
 ```
