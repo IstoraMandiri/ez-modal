@@ -37,31 +37,32 @@
               {{/if}}
             {{/if}}
           {{/if}}
-
-          <div class="modal-footer">
-            {{#if footerTemplate}}
-              {{> UI.dynamic template=footerTemplate data=dataContext}}
-            {{else}}
-              {{#if buttons}}
-                {{#if leftButtons}}
-                  <div class="pull-left">
-                    {{#each leftButtons}}
-                      <div class="ez-modal-button btn btn-{{#if color}}{{color}}{{else}}default{{/if}}">{{{html}}}</div>
-                    {{/each}}
-                  </div>
-                {{/if}}
-                {{#if rightButtons}}
-                  <div class="pull-right">
-                    {{#each rightButtons}}
-                      <div class="ez-modal-button btn btn-{{#if color}}{{color}}{{else}}default{{/if}}">{{{html}}}</div>
-                    {{/each}}
-                  </div>
-                {{/if}}
+          {{#unless hideFooter}}
+            <div class="modal-footer">
+              {{#if footerTemplate}}
+                {{> UI.dynamic template=footerTemplate data=dataContext}}
               {{else}}
-                <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                {{#if buttons}}
+                  {{#if leftButtons}}
+                    <div class="pull-left">
+                      {{#each leftButtons}}
+                        <div class="ez-modal-button btn btn-{{#if color}}{{color}}{{else}}default{{/if}}">{{{html}}}</div>
+                      {{/each}}
+                    </div>
+                  {{/if}}
+                  {{#if rightButtons}}
+                    <div class="pull-right">
+                      {{#each rightButtons}}
+                        <div class="ez-modal-button btn btn-{{#if color}}{{color}}{{else}}default{{/if}}">{{{html}}}</div>
+                      {{/each}}
+                    </div>
+                  {{/if}}
+                {{else}}
+                  <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+                {{/if}}
               {{/if}}
-            {{/if}}
-          </div>
+            </div>
+          {{/unless}}
 
         {{/if}}
       </div>

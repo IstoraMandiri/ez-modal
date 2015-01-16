@@ -24,8 +24,9 @@ EZModal = (options, callback) ->
     headerTemplate: options.headerTemplate
     bodyTemplate: options.bodyTemplate
     footerTemplate: options.footerTemplate
+    # footer visibility
+    hideFooter: options.hideFooter
     # buttons
-    buttons: options.leftButtons || options.rightButtons
     leftButtons: options.leftButtons
     rightButtons: options.rightButtons
 
