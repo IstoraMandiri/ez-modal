@@ -42,7 +42,7 @@
               {{#if footerTemplate}}
                 {{> UI.dynamic template=footerTemplate data=dataContext}}
               {{else}}
-                {{#if buttons}}
+                {{#if _showButtons}}
                   {{#if leftButtons}}
                     <div class="pull-left">
                       {{#each leftButtons}}

@@ -30,6 +30,7 @@ EZModal = (options, callback) ->
     # buttons
     leftButtons: options.leftButtons
     rightButtons: options.rightButtons
+    _showButtons : options.leftButtons || options.rightButtons
 
   instance = Blaze.renderWithData Template.EZModal, templateOptions, document.body
 
