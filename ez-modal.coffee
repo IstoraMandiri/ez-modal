@@ -13,6 +13,7 @@ EZModal = (options, callback) ->
   templateOptions =
     # styling
     classes: options.classes
+    size: options.size
     fade: options.fade?= true
     # simple content
     title: options.title

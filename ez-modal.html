@@ -1,6 +1,6 @@
 <template name="EZModal">
   <div class="ez-modal modal {{#if fade}}fade{{/if}} {{classes}}">
-    <div class="modal-dialog">
+    <div class="modal-dialog{{#if size}} modal-{{size}}{{/if}}">
       <div class="modal-content">
         {{#if template}}
           {{> UI.dynamic template=template data=dataContext}}
