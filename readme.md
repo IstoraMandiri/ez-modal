@@ -121,6 +121,12 @@ EZModal
         color: String # button class eg. primary / danger
         fn: Function # click event handler
     ]
+    buttonColor: options.buttonColor || 'primary'
+    buttonSize: options.buttonSize || null
+    hideFooter: false # footer visibility
+    buttonColor: String # eg. default
+    buttonSize: String # eg. lg / sm
+
 
     # misc
     show: true # show modal on init

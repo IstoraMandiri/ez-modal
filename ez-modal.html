@@ -46,19 +46,22 @@
                   {{#if leftButtons}}
                     <div class="pull-left">
                       {{#each leftButtons}}
-                        <div class="ez-modal-button btn btn-{{#if color}}{{color}}{{else}}default{{/if}}">{{{html}}}</div>
+                        <div class="ez-modal-button btn
+                        {{#if buttonSize}}btn-{{buttonSize}}{{/if}} btn-{{#if color}}{{color}}{{else}}{{buttonColor}}{{/if}}">{{{html}}}</div>
                       {{/each}}
                     </div>
                   {{/if}}
                   {{#if rightButtons}}
                     <div class="pull-right">
                       {{#each rightButtons}}
-                        <div class="ez-modal-button btn btn-{{#if color}}{{color}}{{else}}default{{/if}}">{{{html}}}</div>
+                        <div class="ez-modal-button btn
+                        {{#if buttonSize}}btn-{{buttonSize}}{{/if}} btn-{{#if color}}{{color}}{{else}}{{buttonColor}}{{/if}}">{{{html}}}</div>
                       {{/each}}
                     </div>
                   {{/if}}
                 {{else}}
-                  <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+                  <button type="button" class="btn
+                  {{#if buttonSize}}btn-{{buttonSize}}{{/if}} btn-{{buttonColor}}" data-dismiss="modal">OK</button>
                 {{/if}}
               {{/if}}
             </div>

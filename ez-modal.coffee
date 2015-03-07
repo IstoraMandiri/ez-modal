@@ -31,6 +31,8 @@ EZModal = (options, callback) ->
     leftButtons: options.leftButtons
     rightButtons: options.rightButtons
     _showButtons : options.leftButtons || options.rightButtons
+    buttonColor: options.buttonColor || 'primary'
+    buttonSize: options.buttonSize || null
 
   instance = Blaze.renderWithData Template.EZModal, templateOptions, document.body
 
@@ -52,3 +54,4 @@ Template.EZModal.events
       do @fn.bind tmpl.data.dataContext, e, tmpl
     else
       tmpl.data.dataContext.EZModal.modal('hide')
+
