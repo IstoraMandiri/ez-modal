@@ -15,7 +15,8 @@ Package.onUse(function(api) {
   ], 'client');
 
   api.addFiles([
-    'ez-modal.html',
+    'ez-modal-bootstrap.html',
+    'ez-modal-bootstrap.coffee',
     'ez-modal.coffee'
   ], 'client');
 
