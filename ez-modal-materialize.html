@@ -1,0 +1,47 @@
+<template name="EZModal_materialize">
+  <div class="ez-modal modal {{#if fixedFooter}}modal-fixed-footer{{/if}} {{#if bottomSheet}}bottom-sheet{{/if}} {{classes}}">
+    {{#if template}}
+      {{> UI.dynamic template=template data=dataContext}}
+    {{else}}
+      <div class="modal-content">
+        {{#if bodyTemplate}}
+          {{> UI.dynamic template=bodyTemplate data=dataContext}}
+        {{else}}
+          {{#if body}}
+            <h4>{{body}}</h4>
+          {{else}}
+            {{#if bodyHtml}}
+              {{bodyHtml}}}
+            {{/if}}
+          {{/if}}
+        {{/if}}
+      </div>
+      {{#unless hideFooter}}
+        <div class="modal-footer">
+          {{#if footerTemplate}}
+            {{> UI.dynamic template=footerTemplate data=dataContext}}
+          {{else}}
+            {{#if _showButtons}}
+              {{#if leftButtons}}
+                <div class="pull-left">
+                  {{#each leftButtons}}
+                    <div class="ez-modal-button modal-action modal-close waves-effect waves-green btn-flat {{classes}}">{{{html}}}</div>
+                  {{/each}}
+                </div>
+              {{/if}}
+              {{#if rightButtons}}
+                <div class="pull-right">
+                  {{#each rightButtons}}
+                    <div class="ez-modal-button modal-action modal-close waves-effect waves-green btn-flat {{classes}}">{{{html}}}</div>
+                  {{/each}}
+                </div>
+              {{/if}}
+            {{else}}
+              <button type="button" class="ez-modal-button modal-action modal-close waves-effect waves-green btn-flat" data-dismiss="modal">OK</button>
+            {{/if}}
+          {{/if}}
+        </div>
+      {{/unless}}
+    {{/if}}
+  </div>
+</template>
