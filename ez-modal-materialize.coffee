@@ -40,9 +40,10 @@ share.materializeModal = (options, callback) ->
 
   instance = Blaze.renderWithData Template.EZModal_materialize, templateOptions, document.body
 
-  modal = $(instance.firstNode()).openModal materializeOptions
+  $modal = $(instance.firstNode())
+  $modal.openModal(materializeOptions)
 
-  templateOptions.dataContext.EZModal = modal
+  templateOptions.dataContext.EZModal = $modal
 
   # return the modal object itself
-  return modal
+  return $modal
