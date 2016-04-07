@@ -4,6 +4,13 @@
       {{> UI.dynamic template=template data=dataContext}}
     {{else}}
       <div class="modal-content">
+        {{#if title}}
+          <div class="row">
+            <div class="col s12">
+              <h5>{{title}}</h5>
+            </div>
+          </div>
+        {{/if}}
         {{#if bodyTemplate}}
           {{> UI.dynamic template=bodyTemplate data=dataContext}}
         {{else}}
@@ -23,16 +30,16 @@
           {{else}}
             {{#if _showButtons}}
               {{#if leftButtons}}
-                <div class="pull-left">
+                <div class="left">
                   {{#each leftButtons}}
-                    <div class="ez-modal-button modal-action modal-close waves-effect waves-green btn-flat {{classes}}">{{{html}}}</div>
+                    <div class="ez-modal-button modal-action modal-close waves-effect waves-red btn-flat {{classes}}">{{{html}}}</div>
                   {{/each}}
                 </div>
               {{/if}}
               {{#if rightButtons}}
-                <div class="pull-right">
+                <div class="right">
                   {{#each rightButtons}}
-                    <div class="ez-modal-button modal-action modal-close waves-effect waves-green btn-flat {{classes}}">{{{html}}}</div>
+                    <div class="ez-modal-button modal-action waves-effect waves-green btn-flat {{classes}}">{{{html}}}</div>
                   {{/each}}
                 </div>
               {{/if}}
