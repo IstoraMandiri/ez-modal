@@ -1,6 +1,6 @@
 Package.describe({
-  summary: "Easy Bootstrap 3 Modals",
-  version: "0.3.3",
+  summary: "Easy Framework-Agnostic Modals",
+  version: "0.4.0",
   name: 'hitchcott:ez-modal',
   git: "https://github.com/hitchcott/ez-modal"
 });
@@ -15,12 +15,13 @@ Package.onUse(function(api) {
   ], 'client');
 
   api.addFiles([
-    'ez-modal-bootstrap.html',
-    'ez-modal-bootstrap.coffee',
-    'ez-modal-materialize.html',
-    'ez-modal-materialize.coffee',
-    'ez-modal.coffee'
+    'frameworks/ez-modal-bootstrap.html',
+    'frameworks/ez-modal-bootstrap.coffee',
+    'frameworks/ez-modal-materialize.html',
+    'frameworks/ez-modal-materialize.coffee',
+    'ez-modal.coffee',
+    'ez-modal-form.coffee'
   ], 'client');
 
-  api.export('EZModal')
+  api.export(['EZModal', 'EZFormModal'], 'client')
 });
