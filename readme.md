@@ -1,6 +1,6 @@
 # EZ Modal
 
-### Easy Bootstrap 3 Modals for Meteor
+### Easy Modals for Meteor
 
 ```
 $ meteor add hitchcott:ez-modal
@@ -86,6 +86,19 @@ $myModal = EZModal
   body: 'Testing'
 
 $myModal.modal('show')
+```
+
+### Form
+
+EZModal now has support for forms. Use `EZFormModal` and specify a template with a `<form>` as the root node. The `<form>` should *not* include a submit button. The callback will return a serialized data object based on the input `name`s.
+
+```
+EZFormModal
+  title: 'Send Transaction'
+  template: 'txForm'
+  data: { from: defaultAccount.address }
+, (err, data) ->
+  console.log('got data', data)
 ```
 
 ## API
