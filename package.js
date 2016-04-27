@@ -1,6 +1,6 @@
 Package.describe({
   summary: "Easy Framework-Agnostic Modals",
-  version: "0.4.0",
+  version: "0.4.1",
   name: 'hitchcott:ez-modal',
   git: "https://github.com/hitchcott/ez-modal"
 });
@@ -11,7 +11,8 @@ Package.onUse(function(api) {
   api.use([
     'jquery',
     'templating',
-    'coffeescript'
+    'coffeescript',
+    'pcel:serialize@1.0.1'
   ], 'client');
 
   api.addFiles([
